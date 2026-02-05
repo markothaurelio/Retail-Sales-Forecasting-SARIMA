@@ -19,7 +19,7 @@ the next three years.
 ## Exploratory Data Analysis
 
 ### Raw Time Series
-![Raw Time Series](images/raw_timeseries.png)
+![Raw Time Series](images/image001.png)
 
 The time series shows a strong upward trend with clear and repeating annual
 seasonality. The increasing amplitude of seasonal fluctuations over time
@@ -28,7 +28,7 @@ suggests a multiplicative seasonal structure.
 ---
 
 ### Seasonal Decomposition
-![Seasonal Decomposition](images/decomposition.png)
+![Seasonal Decomposition](images/image002.png)
 
 **Trend:**  
 A steady upward trend from 1992 until around 2019, followed by a sharp increase
@@ -53,7 +53,7 @@ required.
 
 First-order differencing and seasonal differencing at lag 12 are applied.
 
-![Differenced Series](images/differenced_series.png)
+![Differenced Series](images/image005.png)
 
 After differencing, the ADF test strongly rejects non-stationarity
 (p-value < 0.01), confirming the series is suitable for SARIMA modelling.
@@ -61,7 +61,7 @@ After differencing, the ADF test strongly rejects non-stationarity
 ---
 
 ## ACF and PACF Analysis
-![ACF and PACF](images/acf_pacf.png)
+![ACF and PACF](images/image006.png)
 
 The non-seasonal ACF and PACF show no clear cut-off, suggesting a mixed ARMA
 structure. Seasonal lags show a strong ACF spike at lag 12 with tapering PACF,
@@ -78,9 +78,11 @@ balance goodness-of-fit and model complexity.
 
 The best-performing model by both criteria is:
 
+
 ```
 SARIMA(2,1,1)(1,1,2)[12]
 ```
+
 
 This model provides the most parsimonious representation of the data while
 maintaining strong predictive performance.
@@ -90,7 +92,7 @@ maintaining strong predictive performance.
 ## Model Diagnostics
 
 ### Residual Analysis
-![Residual Diagnostics](images/residuals.png)
+![Residual Diagnostics](images/image007.png)
 
 Residuals fluctuate around zero, indicating mean-stationary errors. Increased
 volatility during 2020–2021 reflects pandemic-related shocks. Minor remaining
@@ -103,7 +105,7 @@ autocorrelation is present but acceptable for forecasting purposes.
 Using the selected SARIMA model, monthly forecasts were generated for 36 months
 (April 2023 – March 2026).
 
-![Forecast Plot](images/forecast.png)
+![Forecast Plot](images/image008.png)
 
 The forecasts preserve the strong seasonal pattern observed historically, with
 peaks occurring each December, likely driven by holiday demand. Confidence
