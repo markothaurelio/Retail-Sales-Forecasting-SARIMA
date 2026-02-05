@@ -28,20 +28,22 @@ suggests a multiplicative seasonal structure.
 ---
 
 ### Seasonal Decomposition
-![Seasonal Decomposition](images/image002.png)
 
 **Trend:**  
 A steady upward trend from 1992 until around 2019, followed by a sharp increase
 during 2020–2021, corresponding to pandemic-era effects.
 
+![Seasonal Decomposition](images/image002.png)
 **Seasonality:**  
 A stable and repeating yearly pattern with pronounced peaks, confirming strong
 seasonal behaviour in sporting goods sales.
 
+![Seasonal Decomposition](images/image003.png)
 **Remainder:**  
 Mostly small, random fluctuations, with larger deviations in recent years,
 indicating irregular shocks not fully explained by trend or seasonality.
 
+![Seasonal Decomposition](images/image004.png)
 ---
 
 ## Stationarity Assessment
